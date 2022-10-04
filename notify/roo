@@ -1,0 +1,23 @@
+import requests
+
+
+
+# LINE Notify 權杖
+token = '8lhviJDovPruj3Q6FJ1AnMVL1HpNqQLpRpF88Ma4bzb'
+
+
+
+# 要發送的訊息
+message = '奶爸固定團，海困-1坦'
+
+
+# HTTP 標頭參數與資料
+headers = { "Authorization": "Bearer " + token }
+
+data = { 'message': message }
+
+
+
+# 以 requests 發送 POST 請求
+requests.post("https://notify-api.line.me/api/notify",
+    headers = headers, data = data)
